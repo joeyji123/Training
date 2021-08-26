@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from kapteyn import kmpfit
 
 size = 50
 
