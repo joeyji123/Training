@@ -42,7 +42,7 @@ print(R2)
 
 #3D plot of the surrogate
 #restrict CL, three plots with CL = 0.2, 0.3, 0.5
-num = 500
+num = num
 CL = np.array([0.2, 0.3, 0.5])
 pltNum = 1
 fig = plt.figure(figsize=plt.figaspect(0.5))
@@ -63,4 +63,16 @@ for k in CL:
    ax.set_ylabel('thickness')
    ax.set_zlabel('CD')
    pltNum = pltNum + 1
+
+#calculating RMSE
+x = input["Camber"].to_numpy()
+y = input["thickness"].to_numpy()
+z = input["CL"].to_numpy()
+yhat = curvefit[0] + curvefit[1] * x + curvefit[2] * y + curvefit[3] * z + curvefit[4] * x * y + \
+             curvefit[5] * x * z + curvefit[6] * y * z + curvefit[7] * x**2 + curvefit[8] * y**2 + curvefit[9] * z**2
+yprime = input["CD"].to_numpy()
+rmse = np.sqrt(np.sum((np.absolute(yprime - yhat))**2)/x.size)
+print("RMSE is : ")
+print(rmse)
+
 plt.show()
