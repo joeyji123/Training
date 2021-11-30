@@ -1,0 +1,2 @@
+include computational_process_python_tool/gui/logos/*
+recursive-exclude examples *

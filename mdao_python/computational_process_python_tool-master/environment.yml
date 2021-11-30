@@ -1,0 +1,16 @@
+name: cppt
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+    - python=3.7
+    - requests
+    - numpy
+    - openmdao>=3.0
+    - ipywidgets
+    - traitlets
+    - traittypes
+    - plotly
+    - ipytree
+    - jupyter
+    - voila
